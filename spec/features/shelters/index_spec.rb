@@ -11,12 +11,11 @@ RSpec.describe "Shelter Index Page" do
   it "As a visitor, I can see the name of each shelter in the system" do
 
     visit "/shelters"
-
     expect(page).to have_content(@alive.name)
     expect(page).to have_content(@harmony.name)
     expect(page).to have_content(@paws.name)
     expect(page).to_not have_content(@paws.address)
-    
+
   end
 
 end
