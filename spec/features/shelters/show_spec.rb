@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Shelter Index Page" do
+RSpec.describe "Shelter Show Page" do
 
   before(:each) do
     @alive = Shelter.create!(name: "ALIVE Rescue", address: "1214 W Monroe St", city: "Chicago", state: "IL", zip: 60607)
@@ -9,11 +9,16 @@ RSpec.describe "Shelter Index Page" do
   end
 
   it "As a visitor, I can see the name of each shelter in the system" do
-    visit "/shelters"
-    expect(page).to have_link(@alive.name)
-    expect(page).to have_link(@harmony.name)
-    expect(page).to have_link(@paws.name)
-    expect(page).to_not have_content(@paws.address)
+
+    visit "/shelters/#{@paws.id}"
+    expect(page).to have_content(@paws.name)
+    expect(page).to have_content(@paws.address)
+    expect(page).to have_content(@paws.city)
+    expect(page).to have_content(@paws.state)
+    expect(page).to have_content(@paws.zip)
+
+    expect(page).to_not have_content(@alive.name)
+
   end
-  
+
 end

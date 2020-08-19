@@ -2,6 +2,6 @@
 
 <% @shelters.each do |shelter| %>
   <ul>
-    <li> <%= shelter.name %> </li>
+    <li> <%= link_to shelter.name, "/shelters/#{shelter.id}" %> </li>
   </ul>
-  <% end %>
+<% end %>
