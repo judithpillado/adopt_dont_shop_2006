@@ -1,7 +1,11 @@
 <h1> Pet Adoption Shelters </h1>
 
-<% @shelters.each do |shelter| %>
-  <ul>
-    <li> <%= link_to shelter.name, "/shelters/#{shelter.id}" %> </li>
-  </ul>
-<% end %>
+<section class="shelters">
+  <% @shelters.each do |shelter| %>
+    <ul>
+      <li> <%= link_to shelter.name, "/shelters/#{shelter.id}" %> </li>
+    </ul>
+    <% end %>
+</section>
+
+<h2> <%= link_to "New Shelter", "/shelters/new" %> </h2>

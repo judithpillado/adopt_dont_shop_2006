@@ -8,12 +8,15 @@ RSpec.describe "Shelter Index Page" do
     @paws = Shelter.create!(name: "PAWS Chicago", address: "1997 N Clybourn Ave", city: "Chicago", state: "IL", zip: 60618)
   end
 
-  it "As a visitor, I can see the name of each shelter in the system" do
+  it "As a visitor, I can see the name of each shelter in the system." do
     visit "/shelters"
-    expect(page).to have_link(@alive.name)
-    expect(page).to have_link(@harmony.name)
-    expect(page).to have_link(@paws.name)
-    expect(page).to_not have_content(@paws.address)
+
+    within(".shelters") do
+      expect(page).to have_link(@alive.name)
+      expect(page).to have_link(@harmony.name)
+      expect(page).to have_link(@paws.name)
+      expect(page).to_not have_content(@paws.address)
+    end
   end
-  
+
 end

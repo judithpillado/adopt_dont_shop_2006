@@ -8,7 +8,7 @@ RSpec.describe "Shelter Show Page" do
     @paws = Shelter.create!(name: "PAWS Chicago", address: "1997 N Clybourn Ave", city: "Chicago", state: "IL", zip: 60618)
   end
 
-  it "As a visitor, I can see the name of each shelter in the system" do
+  it "As a visitor, I can see the name of each shelter in the system." do
 
     visit "/shelters/#{@paws.id}"
     expect(page).to have_content(@paws.name)
