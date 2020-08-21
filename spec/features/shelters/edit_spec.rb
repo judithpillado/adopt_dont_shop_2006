@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Shelter Edit" do
+RSpec.describe "Edit a Shelter" do
 
   before(:each) do
     @alive = Shelter.create!(name: "ALIVE Rescue", address: "1214 W Monroe St", city: "Chicago", state: "IL", zip: 60607)
