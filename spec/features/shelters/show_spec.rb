@@ -18,7 +18,6 @@ RSpec.describe "Shelter Show Page" do
     expect(page).to have_content(@paws.zip)
 
     expect(page).to_not have_content(@alive.name)
-
   end
 
 end
