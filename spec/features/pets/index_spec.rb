@@ -15,7 +15,7 @@ RSpec.describe "Pet Index Page" do
   it "As a visitor, I can see all the pets in the system along with their information." do
 
     visit "/pets"
-    expect(page).to have_content(@diabla.name)
+    expect(page).to have_link(@diabla.name)
     expect(page).to have_css("img[src=\"#{@diabla.image}\"]")
     expect(page).to have_content(@diabla.age)
     expect(page).to have_content(@diabla.sex)
